@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Game24
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+Make sure you have the following installed on your system:
+- Node.js (latest stable version recommended)
+- npm or yarn
 
-```bash
+### Installation
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/NutchaponSr/game24.git
+   cd game24
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+### Running the Development Server
+To start the development environment:
+```sh
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+This will start the Next.js development server.
+
+To start the Hono server:
+```sh
+npm run dev:hono
+```
+Or run both concurrently:
+```sh
+npm run dev:all
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Building the Project
+To build the project for production:
+```sh
+npm run build
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Starting the Production Server
+To start the production build:
+```sh
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Linting and Formatting
+To lint and format the codebase:
+```sh
+npm run lint
+```
 
-## Learn More
+### Preparing for Git Hooks
+To install Husky for pre-commit hooks:
+```sh
+npm run prepare
+```
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Dependencies
+### Main Dependencies
+- 🚀 Next.js (15.2.4)
+- ⚛️ React (19.0.0)
+- 🔥 Hono (4.7.5)
+- 🛠️ Prisma (6.5.0)
+- 🎨 TailwindCSS (4)
+- 🔄 Zustand for state management
+- 📋 React Hook Form for form handling
+- ✅ Zod for schema validation
+- 🔐 JSON Web Tokens (JWT) for authentication
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Development Dependencies
+- 📝 TypeScript
+- 📏 ESLint and Prettier
+- 🦊 Husky for Git hooks
+- ⚡ Concurrently for running multiple scripts
 
-## Deploy on Vercel
+## Environment Variables
+Create a `.env` file in the root directory and add the following environment variables:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```env
+# Database connection string
+DATABASE_URL="postgresql://your_database_user:your_database_password@your_database_host/your_database_name?sslmode=require"
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# JWT Secret Key
+JWT_SECRET=your_secret_key_here
+
+# Backend and Frontend URLs
+NEXT_PUBLIC_BACKEND_URL=http://localhost:3001
+NEXT_PUBLIC_FRONTEND_URL=http://localhost:3000
+```
+
+## Workflow
+
+![Game24 Banner](public/workflow.png)
+
