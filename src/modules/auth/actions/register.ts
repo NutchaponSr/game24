@@ -11,7 +11,7 @@ export const register = async (value: AuthSchema) => {
     return { error: "Invalid inputs" };
   }
 
-  const response = await client.auth.register.$post({ json: validatedValue.data });
+  const response = await client.api.auth.register.$post({ json: validatedValue.data });
 
   const data = await response.json();
   if (!response.ok) {

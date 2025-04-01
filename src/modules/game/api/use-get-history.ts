@@ -5,7 +5,7 @@ import { client } from "@/lib/rpc";
 
 import { useCookies } from "@/providers/cookie-provider";
 
-export type ResponseType = InferResponseType<typeof client.game.history.$get, 200>;
+export type ResponseType = InferResponseType<typeof client.api.game.history.$get, 200>;
 
 export const useGetHistory = () => {
   const { cookie } = useCookies();
@@ -14,7 +14,7 @@ export const useGetHistory = () => {
     queryKey: ["history"],
     initialPageParam: 1,
     queryFn: async ({ pageParam = 1 }) => {
-      const response = await client.game.history.$get({
+      const response = await client.api.game.history.$get({
         header: {
           Authorization: `Bearer ${cookie}`,
         },

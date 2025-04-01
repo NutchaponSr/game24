@@ -10,7 +10,7 @@ export const useGenerateNumber = () => {
   const query = useQuery({
     queryKey: ["number"],
     queryFn: async () => {
-      const response = await client.game["generate-number"].$get({
+      const response = await client.api.game["generate-number"].$get({
         header: {
           Authorization: `Bearer ${cookie}`,
         },

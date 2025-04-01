@@ -7,8 +7,8 @@ import { client } from "@/lib/rpc";
 
 import { useGenerateNumber } from "@/modules/game/api/use-generate-number";
 
-type ResponseType = InferResponseType<typeof client.game["submit-solution"]["$post"]>;
-type RequestType = InferRequestType<typeof client.game["submit-solution"]["$post"]>;
+type ResponseType = InferResponseType<typeof client.api.game["submit-solution"]["$post"]>;
+type RequestType = InferRequestType<typeof client.api.game["submit-solution"]["$post"]>;
 
 export const useSolution= () => {
   const { refetch } = useGenerateNumber();
@@ -17,7 +17,7 @@ export const useSolution= () => {
 
   const mutation = useMutation<ResponseType, Error, RequestType>({
     mutationFn: async ({ json, header }) => {
-      const response = await client.game["submit-solution"].$post({ 
+      const response = await client.api.game["submit-solution"].$post({ 
         json,
         header
       })

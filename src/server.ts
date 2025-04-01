@@ -14,7 +14,7 @@ declare module "hono" {
   }
 }
 
-const app = new Hono();
+const app = new Hono().basePath("/api");
 
 const authMiddleware = async (c: Context, next: () => Promise<void>) => {
   const authHeader = c.req.header("Authorization");
