@@ -36,7 +36,7 @@ const authMiddleware = async (c: Context, next: () => Promise<void>) => {
 };
 
 app.use("*", cors({
-  origin: "http://localhost:3000",
+  origin: process.env.NEXT_PUBLIC_FRONTEND_URL!,
   allowMethods: ["GET", "POST"],
   allowHeaders: ["Content-Type", "Authorization"],
   exposeHeaders: ["Content-Length"],
@@ -53,8 +53,8 @@ const route = app
 serve({
   fetch: app.fetch,
   port: 3001
-}, (info) => {
-  console.log(`Hono server running at http://localhost:${info.port}`);
+}, () => {
+  console.log(`Hono server running at ${process.env.NEXT_PUBLIC_BACKEND_URL}`);
 });
 
 export type AppType = typeof route;

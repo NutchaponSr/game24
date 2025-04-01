@@ -31,7 +31,7 @@ export const AuthModal = () => {
       </DialogTrigger>
       <DialogContent>
         <div className="flex justify-center items-center">
-          <Image src="/mascot.svg" alt="Logo" width={32} height={32} />
+          <Image src="/logo.svg" alt="Logo" width={32} height={32} />
         </div>
         <DialogHeader className="items-center">
           <DialogTitle>{authMode === "SignUp" ? "Sign Up" : "Sign In"}</DialogTitle>

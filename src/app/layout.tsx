@@ -3,8 +3,6 @@ import { cookies } from "next/headers";
 import { Nunito } from "next/font/google";
 import "./globals.css";
 
-import { NuqsAdapter } from "nuqs/adapters/next/app";
-
 import { cn } from "@/lib/utils";
 
 import { Toaster } from "react-hot-toast";
@@ -32,12 +30,10 @@ export default async function RootLayout({
       <CookieProvider cookie={token}>
         <html lang="en">
           <body className={cn(font.className, "antialiased")}>
-            <NuqsAdapter>
-              <QueryProvider>
-                {children}
-                <Toaster />
-              </QueryProvider>
-            </NuqsAdapter>
+            <QueryProvider>
+              {children}
+              <Toaster />
+            </QueryProvider>
           </body>
         </html>
       </CookieProvider>
