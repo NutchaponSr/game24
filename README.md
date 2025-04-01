@@ -1,5 +1,3 @@
-# Game24
-
 ## Getting Started
 
 ### Prerequisites
@@ -17,6 +15,21 @@ Make sure you have the following installed on your system:
    ```sh
    npm install
    ```
+### Database Management
+Game24 uses Prisma ORM for database interactions. Use the following commands to manage the database:
+
+- Generate Prisma client:
+  ```sh
+  npm run db:generate
+  ```
+- Open Prisma Studio for database exploration:
+  ```sh
+  npm run db:studio
+  ```
+- Push schema changes to the database:
+  ```sh
+  npm run db:push
+  ```
 
 ### Running the Development Server
 To start the development environment:
