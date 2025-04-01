@@ -10,7 +10,10 @@
     "start": "next start",
     "lint": "next lint",
     "test": "echo \"No tests specified\" && exit 0",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "db:generate": "npx prisma generate",
+    "db:studio": "npx prisma studio",
+    "db:push": "npx prisma push"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": ["eslint --max-warnings 0 .", "prettier --write"]
